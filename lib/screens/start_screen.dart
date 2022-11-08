@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:steckbrief_app_patryk/screens/datenschutz.dart';
+import 'package:steckbrief_app_patryk/screens/hobby_screen.dart';
+import 'package:steckbrief_app_patryk/screens/stack_screen.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({Key? key}) : super(key: key);
@@ -15,6 +18,30 @@ class StartScreen extends StatelessWidget {
           child: Column(
             children: [
               Image.asset("assets/2009Creed.webp"),
+              ElevatedButton(
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HobbyScreen()),
+                    );
+                  },
+                  child: Text("Hobbys")),
+              ElevatedButton(
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => StackScreen()),
+                    );
+                  },
+                  child: Text("Stack")),
+              ElevatedButton(
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Datenschutz()),
+                    );
+                  },
+                  child: Text("Datenschutz")),
               neueZeile(text: "Alter: 99"),
               neueZeile(text: "Name: Ziomek"),
             ],
